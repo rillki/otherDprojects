@@ -1,7 +1,7 @@
 import raylib;
 
 void main() {
-	immutable int screenWidth = 640;
+    immutable int screenWidth = 640;
     immutable int screenHeight = 480;
 
     InitWindow(screenWidth, screenHeight, "Dlang Fractal Tree");

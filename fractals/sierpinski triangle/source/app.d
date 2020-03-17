@@ -4,7 +4,7 @@ void main() {
     immutable int screenWidth = 640;
     immutable int screenHeight = 480;
 
-    InitWindow(screenWidth, screenHeight, "Dlang Fractal Tree");
+    InitWindow(screenWidth, screenHeight, "Dlang Sierpinski Triangle");
 
     // set fps = 5 when calling sierpinskiTriangleAnimation function
     SetTargetFPS(30);

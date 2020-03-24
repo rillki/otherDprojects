@@ -2,9 +2,9 @@ import pyd.pyd;
 import pyd.embedded;
 
 /*
-	Do not forget to specify the Python version installed on your system in dub.json
-	"subConfigurations": {
-        "pyd": "python27",
+    Do not forget to specify the Python version installed on your system in dub.json
+    "subConfigurations": {
+    	"pyd": "python27",
     }
 
     For more information check out:

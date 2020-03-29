@@ -6,9 +6,9 @@ immutable float scalingFactor = sqrt(2.0); // scaling factor of line length
 
 // point struct
 struct Point {
-	int x = 0;					// x pos
-	int y = 0;					// y pos
-	int length = 0;				// length of a line
+	int x = 0;			// x pos
+	int y = 0;			// y pos
+	int length = 0;			// length of a line
 	int defaultLength = 0;		// default length of a line
 	
 	// initialization
@@ -42,26 +42,26 @@ void main() {
     InitWindow(screenWidth, screenHeight, "Dlang Dragon Curve");
     SetTargetFPS(60);
 	
-	// create a random point with line length
-	Point point = Point(100, 100, 400);
+    // create a random point with line length
+    Point point = Point(100, 100, 400);
 
     while (!WindowShouldClose()) {
         // process events -> moving the dragon curve (up, down, left, right) + zooming in and zooming out
-		if(IsKeyDown(KeyboardKey.KEY_UP)) {
-			point.y++;
-		} else if(IsKeyDown(KeyboardKey.KEY_DOWN)) {
-			point.y--;
-		} else if(IsKeyDown(KeyboardKey.KEY_LEFT)) {
-			point.x++;
-		} else if(IsKeyDown(KeyboardKey.KEY_RIGHT)) {
-			point.x--;
-		} else if(IsKeyDown(KeyboardKey.KEY_Z)) {
-			point.length += 10;
-		} else if(IsKeyDown(KeyboardKey.KEY_X)) {
-			point.length -= 10;
-		} else if(IsKeyPressed(KeyboardKey.KEY_C)) {
-			point.length = point.defaultLength;
-		}
+	if(IsKeyDown(KeyboardKey.KEY_UP)) {
+		point.y++;
+	} else if(IsKeyDown(KeyboardKey.KEY_DOWN)) {
+		point.y--;
+	} else if(IsKeyDown(KeyboardKey.KEY_LEFT)) {
+		point.x++;
+	} else if(IsKeyDown(KeyboardKey.KEY_RIGHT)) {
+		point.x--;
+	} else if(IsKeyDown(KeyboardKey.KEY_Z)) {
+		point.length += 10;
+	} else if(IsKeyDown(KeyboardKey.KEY_X)) {
+		point.length -= 10;
+	} else if(IsKeyPressed(KeyboardKey.KEY_C)) {
+		point.length = point.defaultLength;
+	}
 
         // update
 
@@ -69,8 +69,8 @@ void main() {
         BeginDrawing();
         ClearBackground(BLACK);
 		
-		// draw the dragon curve
-		dragonCurve(point.x, point.y, point.length, 0, 15);
+	// draw the dragon curve
+	dragonCurve(point.x, point.y, point.length, 0, 15);
 
         EndDrawing();
     }

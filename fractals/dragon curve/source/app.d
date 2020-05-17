@@ -2,21 +2,30 @@ import raylib;
 
 import std.math: sqrt, sin, cos, PI;
 
-immutable float scalingFactor = sqrt(2.0); // scaling factor of line length
+immutable scalingFactor = sqrt(2.0f); // scaling factor of line length
 
-// point struct
-struct Point {
+// camera struct
+struct Camera {
 	int x = 0;			// x pos
 	int y = 0;			// y pos
 	int length = 0;			// length of a line
+
+	int defaultX = 0;
+	int defaultY = 0;
 	int defaultLength = 0;		// default length of a line
 	
 	// initialization
 	this(int x, int y, int length) {
-		this.x = x;
-		this.y = y;
-		this.length = length;
-		this.defaultLength = length;
+		this.defaultX = this.x = x;
+		this.defaultY = this.y = y;
+		this.defaultLength = this.length = length;
+	}
+
+	// reset camera view
+	void reset() {
+		length = defaultLength;
+		x = defaultX;
+		y = defaultY;
 	}
 }
 
@@ -31,7 +40,7 @@ void dragonCurve(float x, float y, float length, float angle, int limit) {
 	dragonCurve(x, y, length/scalingFactor, angle-PI/4, limit-1);
 	
 	// divide the length by scalingFactor and rotate the line by 5*PI/4
-	dragonCurve(x+length*cos(angle), y+length*sin(angle), length/scalingFactor, angle+PI/4 + PI, limit-1);
+	dragonCurve(x+length*cos(angle), y+length*sin(angle), length/scalingFactor, angle+5*PI/4, limit-1);
 }
 
 void main() {
@@ -40,42 +49,41 @@ void main() {
 
     // init
     InitWindow(screenWidth, screenHeight, "Dlang Dragon Curve");
+	scope(exit) CloseWindow();
     SetTargetFPS(60);
 	
-    // create a random point with line length
-    Point point = Point(100, 100, 400);
+    // create a random camera with line length
+    Camera camera = Camera(200, 150, 400);
 
     while (!WindowShouldClose()) {
         // process events -> moving the dragon curve (up, down, left, right) + zooming in and zooming out
-	if(IsKeyDown(KeyboardKey.KEY_UP)) {
-		point.y++;
-	} else if(IsKeyDown(KeyboardKey.KEY_DOWN)) {
-		point.y--;
-	} else if(IsKeyDown(KeyboardKey.KEY_LEFT)) {
-		point.x++;
-	} else if(IsKeyDown(KeyboardKey.KEY_RIGHT)) {
-		point.x--;
-	} else if(IsKeyDown(KeyboardKey.KEY_Z)) {
-		point.length += 10;
-	} else if(IsKeyDown(KeyboardKey.KEY_X)) {
-		point.length -= 10;
-	} else if(IsKeyPressed(KeyboardKey.KEY_C)) {
-		point.length = point.defaultLength;
-	}
+		if(IsKeyDown(KeyboardKey.KEY_UP)) {
+			camera.y += 10;
+		} else if(IsKeyDown(KeyboardKey.KEY_DOWN)) {
+			camera.y -= 10;
+		} else if(IsKeyDown(KeyboardKey.KEY_LEFT)) {
+			camera.x += 10;
+		} else if(IsKeyDown(KeyboardKey.KEY_RIGHT)) {
+			camera.x -= 10;
+		} else if(IsKeyDown(KeyboardKey.KEY_Z)) {
+			camera.length += 10;
+		} else if(IsKeyDown(KeyboardKey.KEY_X)) {
+			camera.length -= 10;
+		} else if(IsKeyPressed(KeyboardKey.KEY_C)) {
+			camera.reset(); // reset camera view
+		}
 
         // update
 
         // render
         BeginDrawing();
-        ClearBackground(BLACK);
+        ClearBackground(GRAY);
 		
-	// draw the dragon curve
-	dragonCurve(point.x, point.y, point.length, 0, 15);
-
+		// draw the dragon curve
+		dragonCurve(camera.x, camera.y, camera.length, PI/2, 12);
+		
+		DrawFPS(10, 10);
         EndDrawing();
     }
-	
-    // quit
-    CloseWindow();
 }
 

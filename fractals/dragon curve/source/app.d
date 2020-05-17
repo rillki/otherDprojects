@@ -79,10 +79,10 @@ void main() {
         BeginDrawing();
         ClearBackground(GRAY);
 		
-		// draw the dragon curve
-		dragonCurve(camera.x, camera.y, camera.length, PI/2, 12);
+	// draw the dragon curve
+	dragonCurve(camera.x, camera.y, camera.length, PI/2, 12);
 		
-		DrawFPS(10, 10);
+	DrawFPS(10, 10);
         EndDrawing();
     }
 }

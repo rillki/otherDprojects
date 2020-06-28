@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/extension-er
+extension-er.so
+extension-er.dylib
+extension-er.dll
+extension-er.a
+extension-er.lib
+extension-er-test-*
+*.exe
+*.o
+*.obj
+*.lst

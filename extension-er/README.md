@@ -26,4 +26,4 @@ Using Extension-er you can change the extention of these files to rtf (or any ot
 6. To run it again, type 'dub' or './extension-er' and press enter
 
 ### How to use it?
-... coming soon
+1. Launch Extension-er

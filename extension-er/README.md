@@ -34,7 +34,7 @@ Using Extension-er you can change the extention of these files to rtf (or any ot
 
 ![](https://github.com/rillk500/otherDprojects/blob/master/extension-er/how-to-imgs/1.png)
 
-3. Enter the full path and new extension
+3. Enter the full path and new file extension
 
 ![](https://github.com/rillk500/otherDprojects/blob/master/extension-er/how-to-imgs/2.png)
 

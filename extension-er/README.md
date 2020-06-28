@@ -6,15 +6,15 @@ If you need to change the extention of say 100 files, then it's better to use th
 
 ### How does it work?:
 Suppose you have the following fiels in ../Desktop/temp
-1. a.txt
-2. b.txt
-3. c.txt
-4. etc...
-
-Using Extension-er you can change the extention of these files to rtf (or any other) in a single click:
 1. a.rtf
 2. b.rtf
 3. c.rtf
+4. etc...
+
+Using Extension-er you can change the extention of these files to txt (or any other) in a single click:
+1. a.txt
+2. b.txt
+3. c.txt
 4. etc...
 
 ### How to install it?

@@ -92,56 +92,13 @@ class EntryBox : Box {
 	    import std.exception : collectException;					// catch any exception
 		auto e = collectException(list = listdir(stringPath));
 		if (e) {
-			AppMessageDialog dialog = new AppMessageDialog(window, "\n\n\nError: Invalid path!"); // if error, output: invalid path
+			AppMessageDialog dialog = new AppMessageDialog(window, "Alert!", "\n\n\nError: Invalid path!"); // if error, output: invalid path
 		} else {
-			AppMessageDialog dialog = new AppMessageDialog(window, stringPath, list, extension); // procede further
+			changeExtension(stringPath, list, extension);
 		}
 	}
-}
 
-// Dialog
-class AppMessageDialog : MessageDialog {
-	GtkDialogFlags flags = GtkDialogFlags.MODAL;
-	MessageType messageType = MessageType.INFO;
-	ButtonsType buttonType = ButtonsType.OK;
-	int responseID;
-	
-	string[] list;
-	string path, extension;
-
-	MainWindow window;
-
-	this(MainWindow window, string msg) {
-		super(window, flags, messageType, buttonType, msg);
-		setTitle("Alert!");
-		setSizeRequest(200, 150);
-		addOnResponse(&nothing);
-		run();
-		destroy();
-	}
-
-	this(MainWindow window, string path, string[] list, string extension) {
-		this.path = path;
-		this.list = list;
-		this.extension = extension;
-		this.window = window;
-
-		string msg;
-		msg ~= "CHANGE EXTENSION?\n\n";
-		foreach(l; list) {
-			msg ~= l ~ "\n";
-		}
-
-		super(window, flags, messageType, buttonType, msg);
-		setTitle("Alert!");
-		setSizeRequest(200, 150);
-		addOnResponse(&doSomething);
-		run();
-		destroy();
-	}
-
-	
-	void doSomething(int response, Dialog d) {
+	void changeExtension(string path, string[] list, string extension) {
 		import std.file: rename;
 
 		foreach(l; list) {												// get file name without the old extension
@@ -157,7 +114,29 @@ class AppMessageDialog : MessageDialog {
 			rename(path ~ l, path ~ newFilename ~ "." ~ extension);  	// change file extention to new extention specified by the user
 		}
 
-		AppMessageDialog dialog = new AppMessageDialog(window, "\n\n\nFILE EXTENSION CHANGED!"); // notify of success
+		AppMessageDialog dialog = new AppMessageDialog(window, "Alert!", "\n\n\nFILE EXTENSION CHANGED!"); // notify of success
+	}
+}
+
+// Dialog
+class AppMessageDialog : MessageDialog {
+	GtkDialogFlags flags = GtkDialogFlags.MODAL;
+	MessageType messageType = MessageType.INFO;
+	ButtonsType buttonType = ButtonsType.OK;
+	int responseID;
+	
+	string[] list;
+	string path, extension;
+
+	MainWindow window;
+
+	this(MainWindow window, string title, string msg) {
+		super(window, flags, messageType, buttonType, msg);
+		setTitle(title);
+		setSizeRequest(winWidth, winHeight);
+		addOnResponse(&nothing);
+		run();
+		destroy();
 	}
 
 	void nothing(int response, Dialog d) {}

@@ -2,7 +2,7 @@
 Change extension of all files in a folder to any specified extension. It DOES NOT convert the files themselves. 
 
 ### Why should I use it?
-If you need to change the extention of say 100 files, it's better to use the Extension-er instead of changing it by hand.
+If you need to change the extention of say 100 files, then it's better to use the Extension-er. It will do the job in under a second.
 
 ### How does it work?:
 Suppose you have the following fiels in ../Desktop/temp

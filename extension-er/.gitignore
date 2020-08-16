@@ -9,7 +9,6 @@ extension-er.dll
 extension-er.a
 extension-er.lib
 extension-er-test-*
-*.exe
 *.o
 *.obj
 *.lst

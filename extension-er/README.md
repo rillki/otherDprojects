@@ -17,6 +17,9 @@ Using Extension-er you can change the extention of these files to txt (or any ot
 3. c.txt
 4. etc...
 
+### Download (mac os, windows 10, linux - soon)
+If your would like to download a precompiled version, email me to rillk500@gmail.com, and I will send the download link.
+
 ### How to install it?
 1. Clone the folder
 2. Make sure you have DMD and DUB installed on your system

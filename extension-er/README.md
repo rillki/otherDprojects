@@ -28,19 +28,19 @@ Using Extension-er you can change the extention of these files to txt (or any ot
 ### How to use it?
 1. Put all files in one folder.
 
-![](https://github.com/rillk500/otherDprojects/blob/master/extension-er/how-to-imgs/4.png)
+<center><img src="how-to-imgs/4.png"></center>
 
 2. Launch Extension-er
 
-![](https://github.com/rillk500/otherDprojects/blob/master/extension-er/how-to-imgs/1.png)
+<center><img src="how-to-imgs/1.png"></center>
 
 3. Enter the full path and new file extension
 
-![](https://github.com/rillk500/otherDprojects/blob/master/extension-er/how-to-imgs/2.png)
+<center><img src="how-to-imgs/2.png"></center>
 
 4. Click 'start'. A message will appear when done.
 
-![](https://github.com/rillk500/otherDprojects/blob/master/extension-er/how-to-imgs/3.png)
+<center><img src="how-to-imgs/3.png"></center>
 
 ### The result (from the example above):
-![](https://github.com/rillk500/otherDprojects/blob/master/extension-er/how-to-imgs/5.png)
+<center><img src="how-to-imgs/5.png"></center>

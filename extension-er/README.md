@@ -1,3 +1,5 @@
+<img src="how-to-imgs/ext.png">
+
 # Extension-er
 Change extension of all files in a folder to any specified extension. It DOES NOT convert the files themselves. 
 

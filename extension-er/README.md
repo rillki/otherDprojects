@@ -20,14 +20,13 @@ Using Extension-er you can change the extention of these files to txt (or any ot
 ### Download (mac os, windows 10, linux - soon)
 If you would like to download a precompiled version, email me(rillk500@gmail.com), and I will send the download link to you.
 
-### How to install it?
-1. Install GTK+3 on your system (skip if installed)
+### How to build it?
+1. Install GTK+3 on your system, DMD compiler and DUB package manager
 2. Git clone this repository or download as .zip
-3. Make sure you have DMD and DUB installed on your system
-4. Open up your terminal/console and 'cd folder_name" to the folder
-5. type 'dub' and press enter
-6. It will build exe file with the same name and then execute it
-7. To run it again, type 'dub' or './extension-er' and press enter
+3. Open up your terminal/console and 'cd folder_name" to the folder
+4. type 'dub' and press enter
+5. It will build exe file with the same name and then execute it
+6. To run it again, type 'dub' or './extension-er' and press enter, or double-click on the executable
 
 ### How to use it?
 1. Put all files in one folder.

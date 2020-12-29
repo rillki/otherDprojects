@@ -19,9 +19,6 @@ Using Extension-er you can change the extention of these files to txt (or any ot
 3. c.txt
 4. etc...
 
-### Download (mac os, windows 10, linux - soon)
-If you would like to download a precompiled version, email me(rillk500@gmail.com), and I will send the download link to you.
-
 ### How to build it?
 1. Install GTK+3 on your system, DMD compiler and DUB package manager
 2. Git clone this repository or download as .zip

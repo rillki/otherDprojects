@@ -1,6 +1,9 @@
 .vscode
 .DS_Store
 .dub
+bin/
+build/
+lib/
 docs.json
 *.exe
 *.o

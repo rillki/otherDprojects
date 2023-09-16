@@ -1,0 +1,16 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/zhbk
+zhbk.so
+zhbk.dylib
+zhbk.dll
+zhbk.a
+zhbk.lib
+zhbk-test-*
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst
